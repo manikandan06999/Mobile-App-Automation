@@ -230,6 +230,9 @@ const Navbar = () => {
           <a href="#how-it-works" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
             How It Works
           </a>
+          <a href="#info" className="hover:text-blue-600 transition">
+  Info
+</a>
           <a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
             Features
           </a>

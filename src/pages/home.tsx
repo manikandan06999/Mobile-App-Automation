@@ -5,7 +5,7 @@ import images from "@/assets/images/mab_banner.png";
 import Features from "@/components/sections/Features";
 // import Pricing from "@/components/sections/Pricing";
 import Gallery from "@/components/sections/Gallery";
-
+import InfoSection from "@/components/sections/InfoSection";
 import Testimonials from "@/components/sections/Testimonials";
 import TrustedCompanies from "@/components/common/TrustedCompanies";
 import CTA from "@/components/sections/CTA";
@@ -46,20 +46,18 @@ const Home = () => {
 
       {/* Description */}
       <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl mb-10">
-        Transform your website into native apps for any platform.
-        AI-powered configuration, custom branding, push notifications,
-        and automated builds. No coding required.
+        Automate builds, customize branding, send push notifications, and publish to app stores — all without writing a single line of code.
       </p>
 
       {/* Buttons */}
       <div className="flex gap-4 mb-12">
-        <button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-7 py-3.5 rounded-xl font-medium shadow-lg transition">
-          Get started free →
-        </button>
+        <a href="/dashboard" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-7 py-3.5 rounded-xl font-medium shadow-lg transition">
+          Get started 
+        </a>
 
-        <button className="border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-300 px-7 py-3.5 rounded-xl font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+        {/* <button className="border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-300 px-7 py-3.5 rounded-xl font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
           View pricing
-        </button>
+        </button> */}
       </div>
 
       {/* Stats */}
@@ -106,7 +104,9 @@ const Home = () => {
 
 
 <HowItWorks />
+<InfoSection />
 <Features />
+
 {/* <Pricing /> */}
 <Gallery />
 <Testimonials />

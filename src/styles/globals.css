@@ -60,6 +60,15 @@ body {
 .tag-badge {
   @apply px-4 py-1 rounded-full text-sm font-medium;
 }
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
 
 
 /* ============================= */
@@ -79,4 +88,38 @@ body {
 }
 html {
   scroll-behavior: smooth;
+}
+
+
+/* Glowing Border Animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 10px rgba(59,130,246,0.3); }
+  50% { box-shadow: 0 0 25px rgba(59,130,246,0.6); }
+  100% { box-shadow: 0 0 10px rgba(59,130,246,0.3); }
+}
+
+.animate-glow {
+  animation: glow 3s infinite ease-in-out;
+}
+
+/* Star Pop Animation */
+@keyframes starPop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-star {
+  animation: starPop 0.4s ease forwards;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }

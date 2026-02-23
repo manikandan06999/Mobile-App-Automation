@@ -24,7 +24,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+
+     /* Vite Client Types */
+       "types": ["vite/client"]
+
   },
+  
   "include": ["src"]
+
+  
 }

@@ -20,7 +20,7 @@ const Home = () => {
       <Navbar />
 
       <section className="bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
-  <div className="max-w-[1200px] mx-auto px-8 lg:px-16 py-28 flex flex-col lg:flex-row items-center justify-between gap-16">
+  <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-28 flex flex-col lg:flex-row items-center justify-between gap-16">
 
     {/* LEFT CONTENT */}
     <div className="flex-1">
@@ -51,7 +51,13 @@ const Home = () => {
 
       {/* Buttons */}
       <div className="flex gap-4 mb-12">
-        <a href="/dashboard" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-7 py-3.5 rounded-xl font-medium shadow-lg transition">
+        <a href="/dashboard" className="
+              px-8 py-4 rounded-full font-semibold text-white
+              bg-gradient-to-r from-blue-600 to-purple-600
+              hover:from-blue-700 hover:to-purple-700
+              shadow-xl hover:shadow-2xl
+              transition-all duration-300
+            ">
           Get started 
         </a>
 

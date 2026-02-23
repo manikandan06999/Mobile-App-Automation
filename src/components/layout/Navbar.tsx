@@ -214,7 +214,7 @@ const Navbar = () => {
           : "bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm"
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-8 lg:px-16 py-4 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-4 flex items-center justify-between">
 
         {/* LEFT LOGO */}
         <a href="/" className="flex items-center">

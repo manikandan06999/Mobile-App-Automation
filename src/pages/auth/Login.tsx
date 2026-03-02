@@ -104,36 +104,33 @@ const Login = () => {
   const navigate = useNavigate();
   const API = "http://localhost:8001/api";
 
-  const handleLogin = async () => {
-    try {
-      setError("");
 
-      const res = await fetch(`${API}/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
 
-      const data = await res.json();
+const handleLogin = async () => {
+  const res = await fetch(`${API}/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  });
 
-      if (!res.ok) {
-        setError(data.error || "Login failed");
-        return;
-      }
+  const data = await res.json();
 
-      // ✅ Store JWT
-      localStorage.setItem("token", data.token);
+  if (!res.ok) {
+    alert(data.error);
+    return;
+  }
 
-      // Optional: store user info
-      localStorage.setItem("user", JSON.stringify(data.user));
+  localStorage.setItem("token", data.token);
 
-      navigate("/dashboard");
-    } catch (err) {
-      setError("Server error");
-    }
-  };
+  const payload = JSON.parse(atob(data.token.split(".")[1]));
+
+  if (payload.role === "admin") {
+    navigate("/admin");
+  } else {
+    navigate("/dashboard");
+  }
+};
+
 
   return (
     <AuthLayout>
@@ -192,8 +189,16 @@ const Login = () => {
              Don't have an account yet?{" "}
            <a href="/register" className="text-blue-600 dark:text-blue-400">
              Sign up
-           </a>
+           </a> 
           </p>
+          <button
+  onClick={() =>
+    window.location.href = "http://localhost:8001/api/auth/google"
+  }
+  className="w-full border py-3 rounded-xl flex items-center justify-center gap-2"
+>
+  Continue with Google
+</button>
         </div>
       </div>
     </AuthLayout>
@@ -201,3 +206,35 @@ const Login = () => {
 };
 
 export default Login;
+
+
+  // const handleLogin = async () => {
+  //   try {
+  //     setError("");
+
+  //     const res = await fetch(`${API}/auth/login`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ email, password }),
+  //     });
+
+  //     const data = await res.json();
+
+  //     if (!res.ok) {
+  //       setError(data.error || "Login failed");
+  //       return;
+  //     }
+
+  //     // ✅ Store JWT
+  //     localStorage.setItem("token", data.token);
+
+  //     // Optional: store user info
+  //     localStorage.setItem("user", JSON.stringify(data.user));
+
+  //     navigate("/dashboard");
+  //   } catch (err) {
+  //     setError("Server error");
+  //   }
+  // };
